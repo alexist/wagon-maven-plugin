@@ -44,7 +44,7 @@ public class DefaultWagonCopy
     private WagonUpload uploader;
 
     @Override
-    public void copy( Wagon src, WagonFileSet wagonFileSet, Wagon target, boolean optimize, Log logger, boolean incremental )
+    public void copy(Wagon src, WagonFileSet wagonFileSet, Wagon target, boolean optimize, Log logger, boolean incremental)
         throws WagonException, IOException
     {
         if ( wagonFileSet == null )
@@ -70,7 +70,7 @@ public class DefaultWagonCopy
             localFileSet.setDirectory( wagonFileSet.getDownloadDirectory().getAbsolutePath() );
             localFileSet.setOutputDirectory( wagonFileSet.getOutputDirectory() );
 
-            this.uploader.upload( target, localFileSet, optimize, logger, incremental );
+            this.uploader.upload( target, localFileSet, optimize, incremental );
         }
         finally
         {
