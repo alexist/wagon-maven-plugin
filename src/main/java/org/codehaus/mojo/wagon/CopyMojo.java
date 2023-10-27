@@ -69,7 +69,7 @@ public class CopyMojo
 
 
     /**
-     * Download files that doesn't exists in local directory.
+     * Download files that doesn't exist in local directory.
      * Upload files that are not yet in target.
      */
     @Parameter( property = "wagon.incremental")
@@ -89,7 +89,8 @@ public class CopyMojo
         throws IOException, WagonException
     {
         WagonFileSet fileSet = this.getWagonFileSet( fromDir, includes, excludes, caseSensitive, toDir );
-        if(downloadDirectory != null){
+        if( downloadDirectory != null )
+        {
             fileSet.setDownloadDirectory(downloadDirectory);
         }
         wagonCopy.copy( srcWagon, fileSet, targetWagon, optimize, this.getLog(), incremental );

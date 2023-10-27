@@ -86,7 +86,7 @@ public class UploadMojo
     protected WagonUpload wagonUpload;
 
     /**
-     * Download only files that doesn't exists in target directory.
+     * Upload only files that doesn't exist in target directory.
      */
     @Parameter( property = "wagon.incremental")
     private boolean incremental;
